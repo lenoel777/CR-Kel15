@@ -1,0 +1,23 @@
+Large Class
+Method dipisahkan menjadi class baru agar suatu class tidak bloated
+
+Primitive Obsession
+Setiap primitive data type yang memiliki karakterisitik yang sama, disatukan menjadi satu class berbeda.
+
+Switch Statements
+Pada soal ini, semua method untuk calculator dipindahkan ke classnya masing" sehingga ketika memproses switch case tidak dilakukan secara berulang dan fokus ke case yang spesifik
+
+Temporary Field 
+Semua Field yang tertumpuk dalam satu class dipindahkan ke class lain
+pada kasus ini class ShoppingCart berisi Field untuk menghitung total price, jadi field tersebut dipindahkan ke Class baru bernama CartCalculator, sehingga class baru tersebut berfokus untuk menghitung Total price.
+Dengan begitu smell Temporary Field sudah diperbaiki.
+
+Refused Bequest
+Inheritancenya tidak masuk akal. karena class company meng extend class yang calculator tapi hanya menggunakan 1 method (yang paling atas)
+Jadi pada kasus ini, inheritance nya di hapus, kemudian buat attribute baru dengan type data PersonalTaxCalculator. kemudian objek yang dibuat tersebut digunakan sebagai perwakilan untuk fungsi yang diambil dari class PersonalTaxCalculator
+Dengan begitu tidak perlu meng-inherit seluruh class, dan hanya membuat object untuk memanggil fungsi dari class tsb.
+
+Alternative Classes With Different Interfaces
+Ada class dengan method yang fungsinya sama
+Jadi pada kasus ini, karena ada method yang sama pada Class CurrencyConverter dan Checkout Handler, maka hapus method yang sama tersebut pada class Checkout Handler karena class tersebut berisi lebih banyak object
+sehingga class CurrencyConverter bisa berfokus dengan fungsinya. kemudian buatlah object baru pada CheckoutHandler untuk memanggil fungsi dari CurencyConverter.
